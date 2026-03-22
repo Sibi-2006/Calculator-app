@@ -1,50 +1,133 @@
-# Welcome to your Expo app 👋
+# 📱 Secret Calculator Vault (Frontend)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Welcome to the **Secret Calculator Vault**! This is a state-of-the-art stealth application built with React Native and Expo. It masterfully disguises itself as a fully functional calculator while hiding a premium, encrypted vault for your private media and documents behind a secret PIN.
 
-## Get started
+---
 
-1. Install dependencies
+## 🎯 GOALS
+- **Stealth First**: Look and feel like a real calculator.
+- **Premium UX**: High-end glassmorphism and neon-glow interface.
+- **Secure Access**: Instant vault reveal only with your unique PIN.
+- **Cloud Powered**: Seamless connection to your secure backend API.
 
-   ```bash
-   npm install
-   ```
+---
 
-2. Start the app
+## 🏗️ TECH STACK
+- **Language**: JavaScript (ES6+)
+- **Runtime**: React Native (Expo SDK 54+)
+- **Navigation**: React Navigation (Stack & Bottom Tabs)
+- **State**: React Context API (Global Auth & Media)
+- **Networking**: Axios (Backend API Integration)
+- **Storage**: AsyncStorage (Local Session Management)
+- **UI Effects**: Expo Blur, Linear Gradient, Lucide Icons
+- **Media**: Expo Image Picker (Secure Photo/Video selection)
 
-   ```bash
-   npx expo start
-   ```
+---
 
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+## 📂 FOLDER STRUCTURE
+```text
+frontend/
+├── context/      # GLOBAL BRAIN: Manages authentication & media fetching
+├── screens/      # PAGES: Every UI screen (Calculator, Setup, Vault)
+├── assets/       # MEDIA: Local icons and images
+├── .env          # CONFIG: Backend URL setup (Invisible on GitHub)
+├── App.js        # ENTRY: Root navigation system & global providers
+└── package.json  # LIST: Dependencies and version list
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
+## ⚙️ INSTALLATION GUIDE
 
-To learn more about developing your project with Expo, look at the following resources:
+### 1. Clone the repository
+```bash
+git clone https://github.com/Sibi-2006/Calculator-app.git
+cd frontend
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+### 2. Install dependencies
+```bash
+npm install
+```
 
-## Join the community
+### 3. Setup Environment Variables (`.env`)
+Create a file named `.env` in the root of the `frontend` folder and add:
 
-Join our community of developers creating universal apps.
+```env
+EXPO_PUBLIC_API_URL=https://calculator-backend-kncu.onrender.com
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+> [!TIP]
+> This connects your mobile app to the live backend. You can replace this with your local IP if testing during development.
+
+### 4. Run the app
+```bash
+# Start the Expo server
+npx expo start
+```
+
+- **Android/iOS**: Scan the QR code using the **Expo Go** app from your store.
+- **Emulator**: Press `a` (Android) or `i` (iOS) to launch on your computer.
+
+---
+
+## 🔐 CORE CONCEPT
+
+### 🧮 Stealth Mode (The Cover)
+- Default state of the app.
+- Behaves like a real calculator (Math functions work!).
+- No branding or navigation hints to avoid suspicion.
+
+### 🔓 Vault Mode (The System)
+- Unblocks only after typing your PIN and pressing **`=`**.
+- Reveals a high-end, dark-themed vault with tabs for:
+  - **Photos**: Secret grid of encrypted images.
+  - **Videos**: Private video library and player.
+  - **Files**: Secure document storage.
+  - **Settings**: Complete control over your vault security.
+
+---
+
+## 📱 SCREENS OVERVIEW
+- **SetupScreen**: Professional onboarding to create your first Vault and PIN.
+- **CalculatorScreen**: Your secret gateway and primary disguise.
+- **PhotoGallery**: Beautiful grid view of items with cloud sync.
+- **VideoGallery**: Clean interface for managing private video clips.
+- **FileManager**: Organized list of your protected documents and archives.
+- **VaultSettings**: Advanced tools to update PIN or wipe the entire vault.
+
+---
+
+## 🎨 DESIGN SYSTEM (Neon Abyss)
+The vault uses the **Neon Abyss** design system:
+- **Primary Base**: `#060e20` (Midnight darkness)
+- **Glow Accents**: Neon Cyan (`#00f2ff`) and Electric Purple (`#4d21e8`)
+- **Depth**: Layers of glassmorphism (frosted blur) instead of borders for a modern, fluid feel.
+
+---
+
+## 🔗 BACKEND CONNECTION
+This app relies on a secure REST API hosted on Render:
+- **Live URL**: [https://calculator-backend-kncu.onrender.com](https://calculator-backend-kncu.onrender.com)
+- **Auth**: Every request uses a **Bearer Token** (JWT) stored safely in the app.
+- **Metadata**: Files are managed via MongoDB, with blobs hosted on Cloudinary for reliability.
+
+---
+
+## ⚠️ IMPORTANT NOTES
+- **Connection Required**: The backend must be live for the vault to sync files.
+- **Security**: Never share your `.env` settings or local PIN.
+- **Expo Go**: Ensure your mobile device is on the same network if using a local backend.
+
+---
+
+## 🚀 FUTURE IMPROVEMENTS
+- **Biometric API**: Native Fingerprint and FaceID support.
+- **Local Cache**: Offline access to small files using LruCache.
+- **Encryption+**: Client-side AES encryption for extreme privacy.
+- **Dynamic Icons**: Change the calculator icon to other generic apps like "Notes" or "Converter".
+
+---
+
+## 📜 LICENSE
+Distributed under the **MIT License**. Check the license file for legal details.
