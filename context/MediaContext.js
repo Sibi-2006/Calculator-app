@@ -4,7 +4,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const MediaContext = createContext();
 
-const API_URL = 'https://calculator-backend-kncu.onrender.com/api/media'; // Live Render backend URL
+const API_URL = `${process.env.EXPO_PUBLIC_API_URL}/api/media`; // Replaced by .env in production
 
 export const MediaProvider = ({ children }) => {
   const [photos, setPhotos] = useState([]);

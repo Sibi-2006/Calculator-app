@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const AuthContext = createContext();
 
-const API_URL = 'https://calculator-backend-kncu.onrender.com/api/auth'; // Live Render backend URL
+const API_URL = `${process.env.EXPO_PUBLIC_API_URL}/api/auth`; // Replaced by .env in production
 
 export const AuthProvider = ({ children }) => {
   const [isUnlocked, setIsUnlocked] = useState(false);
