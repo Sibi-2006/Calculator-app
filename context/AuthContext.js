@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const AuthContext = createContext();
 
-const API_URL = 'http://192.168.16.101:5000/api/auth'; // Replace with your actual local IP or hosted backend URL
+const API_URL = 'https://calculator-backend-kncu.onrender.com/api/auth'; // Live Render backend URL
 
 export const AuthProvider = ({ children }) => {
   const [isUnlocked, setIsUnlocked] = useState(false);
